@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test')
- 
+
 test('Login Test case', async ({ page }) => {
     await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
     await page.waitForTimeout(4000)
@@ -7,7 +7,7 @@ test('Login Test case', async ({ page }) => {
     console.log("First Content :" + username);
     const pwd = await page.locator("(//p[@class='oxd-text oxd-text--p'])[2]").textContent()
     console.log("Second Content :" + pwd);
- 
+
     await page.getByPlaceholder("Username").fill("Admin")
     await page.getByPlaceholder("Password").fill("admin")
     await page.locator("button:has-text('Login')").click()
